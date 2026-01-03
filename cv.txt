@@ -1,0 +1,205 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage[margin=0.7cm]{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage{tikz}
+\usetikzlibrary{shapes, shadows}
+\usepackage{lmodern}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{eso-pic}
+\usepackage{array}
+
+% ============================================
+% COULEURS PROFESSIONNELLES
+% ============================================
+\definecolor{primary}{RGB}{25, 118, 210}
+\definecolor{secondary}{RGB}{13, 71, 161}
+\definecolor{accent}{RGB}{245, 124, 0}
+\definecolor{lightblue}{RGB}{227, 242, 253}
+\definecolor{darkblue}{RGB}{2, 62, 138}
+\definecolor{lightgray}{RGB}{245, 245, 245}
+\definecolor{mediumgray}{RGB}{189, 189, 189}
+\definecolor{darkgray}{RGB}{64, 64, 64}
+
+% ============================================
+% STYLES ET ESPACEMENTS
+% ============================================
+\setlength{\parskip}{0pt}
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=*, label=\color{accent}\tiny\faIcon{caret-right}}
+\setlist[enumerate]{noitemsep, topsep=2pt, leftmargin=*}
+
+% Style des titres
+\titleformat{\section}
+  {\color{secondary}\normalfont\large\bfseries\raggedright}
+  {}
+  {0pt}
+  {\color{secondary}\rule[0.5em]{\linewidth}{1pt}\vspace{0.2em}}
+
+\titlespacing*{\section}{0pt}{0.5em}{0.3em}
+
+\newcommand{\subtitlesection}[1]{{\color{darkblue}\normalfont\bfseries\small#1\par}\vspace{0.1em}}
+
+% ============================================
+% DÉBUT DU DOCUMENT
+% ============================================
+\begin{document}
+\pagestyle{empty}
+\small
+\enlargethispage{1.5cm}
+
+% ============================================
+% BARRE LATÉRALE GAUCHE
+% ============================================
+\AddToShipoutPictureBG*{%
+\begin{tikzpicture}[remember picture, overlay]
+  % Fond sidebar
+  \fill[primary!12] (current page.north west) rectangle ([xshift=6.3cm]current page.south west);
+  
+  % Photo avec cadre
+  \node[anchor=north west, inner sep=0, outer sep=0] (photo) at ([xshift=1.2cm, yshift=-0.8cm]current page.north west) {
+    \begin{tikzpicture}
+      \clip[rounded corners=0.3cm] (0,0) rectangle (3cm,3.5cm);
+      \node[inner sep=0] {\includegraphics[width=3cm,height=3.5cm,keepaspectratio]{https://raw.githubusercontent.com/adama-fofana/imagestore/main/photoAdama.jpeg}};
+    \end{tikzpicture}
+  };
+  
+  % Nom et titre
+  \node[anchor=north west, align=left, xshift=1.2cm, yshift=-4.5cm, text width=4.5cm] at (current page.north west) {
+    {\color{secondary}\fontsize{22}{26}\selectfont\bfseries\textcolor{primary}{ADAMA}\\FOFANA}\\[0.2em]
+    {\color{accent}\large\bfseries Étudiant Master 2}\\[0.1em]
+    {\color{darkblue}\normalsize\bfseries Génie Informatique}\\[0.2em]
+    {\color{darkgray}\small Professeur de Mathématiques\\\& Assistant Informatique}
+  };
+  
+  % Ligne séparatrice
+  \draw[accent, line width=1.2pt] ([xshift=1.2cm, yshift=-6.5cm]current page.north west) -- ++(4.5cm,0);
+
+  % Carte de contact
+  \node[anchor=north west, rectangle, rounded corners=0.2cm, fill=lightblue, draw=primary!30, line width=0.5pt, inner sep=0.3cm, text width=4.3cm, minimum height=6.2cm, xshift=1.2cm, yshift=-7.8cm] at (current page.north west) {};
+  
+  % Contenu contact
+  \node[anchor=north west, text=darkblue, font=\scriptsize, align=left, xshift=1.5cm, yshift=-8.1cm, text width=4cm] at (current page.north west) {
+    \textbf{\color{secondary}\faIcon{address-card} CONTACT}\\[0.2em]
+    \color{primary}\faIcon{envelope} \color{darkgray}\href{mailto:adama5.fofana@uvci.edu.ci}{adama5.fofana@uvci.edu.ci}\\[0.2em]
+    \color{primary}\faIcon{phone} \color{darkgray}+225 07 57 57 62 27\\[0.2em]
+    \color{primary}\faIcon{map-marker-alt} \color{darkgray}Abidjan Mankono\\[0.8em]
+    
+    \textbf{\color{secondary}\faIcon{network-wired} RÉSEAUX}\\[0.2em]
+    \color{primary}\faIcon{github} \color{darkgray}\href{https://github.com/adama-fofana}{github.com/adama-fofana}\\[0.2em]
+    \color{primary}\faIcon{linkedin} \color{darkgray}\href{https://linkedin.com/in/adama-fofana}{linkedin.com/in/adama-fofana}\\[0.8em]
+    
+    \textbf{\color{secondary}\faIcon{user-circle} PERSONNEL}\\[0.2em]
+    \color{primary}\faIcon{birthday-cake} \color{darkgray}11 mai 2000\\[0.2em]
+    \color{primary}\faIcon{user} \color{darkgray}Célibataire
+  };
+\end{tikzpicture}}
+
+% ============================================
+% CONTENU PRINCIPAL
+% ============================================
+\noindent
+\begin{minipage}[t]{0.66\textwidth}
+\hspace{6.5cm}
+\begin{minipage}[t]{0.93\textwidth}
+\raggedright
+\vspace{-0.3cm}
+
+% PROFIL
+\section*{\faIcon{user-tie} PROFIL}
+\begin{itemize}[leftmargin=*, label={}, topsep=0pt]
+  \item[\color{primary}\faIcon{graduation-cap}] \textbf{Étudiant Master 2 Génie Informatique} spécialisé réseaux, sécurité et développement
+  \item[\color{primary}\faIcon{network-wired}] Double expertise : \textbf{Sécurité informatique} et \textbf{Développement d'applications}
+  \item[\color{primary}\faIcon{chalkboard-teacher}] Expérience pédagogique en enseignement des mathématiques
+  \item[\color{primary}\faIcon{target}] Recherche \textbf{3\textsuperscript{e} année d'ingénierie Réseaux et Sécurité} pour expertise approfondie
+\end{itemize}
+
+% FORMATION
+\section*{\faIcon{graduation-cap} FORMATION}
+\begin{tabular}{@{}>{\color{darkblue}}l @{\hspace{0.3em}} p{0.72\textwidth}@{}}
+2024–2026 & \textbf{Master 2 Génie Informatique}\\
+          & \textcolor{darkgray}{\small Université Nangui Abrogoua, Abidjan}\\[0.1em]
+2024–2026 & \textbf{Licence Réseaux et Sécurité}\\
+          & \textcolor{darkgray}{\small UVCI}\\[0.1em]
+2020–2024 & \textbf{Licence Maths-Informatique}\\
+          & \textcolor{darkgray}{\small Université Nangui Abrogoua}\\[0.1em]
+2024 & \textbf{Bac C}\\
+     & \textcolor{darkgray}{\small Lycée Nangui Abrogoua}\\[0.1em]
+2020 & \textbf{Bac D}\\
+     & \textcolor{darkgray}{\small Lycée de Mankono}
+\end{tabular}
+
+% EXPÉRIENCE
+\section*{\faIcon{briefcase} EXPÉRIENCE}
+\subtitlesection{Collège Moderne Privé Les Florianes, Cocody}
+\textit{\color{accent}Depuis sept. 2025 – Prof. Maths \& Assistant Informatique}
+\begin{itemize}[topsep=1pt]
+  \item Enseignement mathématiques collège
+  \item Support technique et maintenance IT
+  \item Configuration réseau (routage statique, OSPF)
+  \item Analyse réseau avec Wireshark
+  \item Sécurité : FortiGate, VPN
+  \item Admin Linux et virtualisation
+\end{itemize}
+
+% COMPÉTENCES
+\section*{\faIcon{cogs} COMPÉTENCES}
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{\color{secondary}\faIcon{code} DÉVELOPPEMENT}\\
+{\color{primary}\faIcon{circle} }Django, Python\\
+{\color{primary}\faIcon{circle} }Java, JavaFX, C, C++\\
+{\color{primary}\faIcon{circle} }PHP, Pascal\\
+{\color{primary}\faIcon{circle} }Git, GitHub, LaTeX\\[0.2em]
+
+\textbf{\color{secondary}\faIcon{server} SYSTÈMES}\\
+{\color{primary}\faIcon{circle} }Admin Linux\\
+{\color{primary}\faIcon{circle} }VMware, VirtualBox
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\textbf{\color{secondary}\faIcon{shield-alt} RÉSEAUX}\\
+{\color{primary}\faIcon{circle} }TCP/IP, VLAN, DHCP\\
+{\color{primary}\faIcon{circle} }OSPF, DNS\\
+{\color{primary}\faIcon{circle} }FortiGate, VPN\\[0.2em]
+
+\textbf{\color{secondary}\faIcon{users} SOFT SKILLS}\\
+{\color{primary}\faIcon{circle} }Adaptabilité\\
+{\color{primary}\faIcon{circle} }Analyse critique\\
+{\color{primary}\faIcon{circle} }Pédagogie
+\end{minipage}
+
+% CERTIFICATIONS
+\section*{\faIcon{certificate} CERTIFICATIONS}
+\begin{itemize}[topsep=1pt]
+  \item \textbf{Cybersécurité} – Cisco Networking Academy
+  \item \textbf{Python, Java, Django} – OpenClassrooms
+  \item \textbf{Git \& GitHub} – OpenClassrooms
+  \item \textbf{Code route} – UVCI
+\end{itemize}
+
+% LANGUES
+\section*{\faIcon{language} LANGUES}
+\begin{tabular}{@{}l@{\hspace{0.3em}}c@{\hspace{0.3em}}p{0.55\textwidth}@{}}
+\textbf{Français} & \textcolor{primary}{\faIcon{circle}\faIcon{circle}\faIcon{circle}\faIcon{circle}\faIcon{circle}} & Courant\\
+\textbf{Anglais} & \textcolor{primary}{\faIcon{circle}\faIcon{circle}\faIcon{circle}\faIcon{circle}} & Intermédiaire\\
+\textbf{Espagnol} & \textcolor{primary}{\faIcon{circle}\faIcon{circle}} & Notions\\
+\textbf{Arabe} & \textcolor{primary}{\faIcon{circle}} & Notions
+\end{tabular}
+
+\end{minipage}
+\end{minipage}
+
+% ============================================
+% PIED DE PAGE
+% ============================================
+\begin{tikzpicture}[remember picture, overlay]
+  \node[anchor=south east, text=mediumgray, font=\tiny, xshift=-0.5cm, yshift=0.2cm] at (current page.south east) {CV LaTeX};
+\end{tikzpicture}
+
+\end{document}
